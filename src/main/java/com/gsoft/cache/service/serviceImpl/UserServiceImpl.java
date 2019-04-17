@@ -81,7 +81,7 @@ public class UserServiceImpl implements UserService {
 	    
 	    
 	    List range = cacheList.range("user:list", 0L, -1L);
-	    log.info("获取list3个数 --> [{}]",range.size());
+	    log.info("获取list3 个数 --> [{}]",range.size());
 	    if(range.size()<=0) {
 	    	
 	    	boolean set = cacheList.set("user:list", list);
