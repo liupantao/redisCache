@@ -8,9 +8,13 @@
 		<version>2.1.5.BUILD-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	
 	<groupId>com.gsoft.cache</groupId>
 	<artifactId>redisCache</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
+	<packaging>jar</packaging>
+	
 	<name>redisCache</name>
 	<description>Demo project for Spring Boot</description>
 
