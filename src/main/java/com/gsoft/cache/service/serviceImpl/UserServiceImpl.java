@@ -79,9 +79,22 @@ public class UserServiceImpl implements UserService {
 	    list.add(user1);
 	    list.add(user);
 	    
+	    long lGetListSize = cacheHelper.lGetListSize("user:list");
+	    
+	    log.info("Lget size 个数 --> [{}]",lGetListSize);
+	    
+	    //List<Object> lGet = cacheHelper.lGet("user:list", 0L, -1L);
+	    List<User>  lUser= (List<User>) cacheHelper.lGetIndex("user:list", 0);
+	    //List<User> lUser = (List<User>) lGet.get(0);
+	    
+	    for (User user2 : lUser) {
+	    	log.info("存放Lget--> [{}]",user2.getName());
+		}
 	    
 	    List range = cacheList.range("user:list", 0L, -1L);
 	    log.info("获取list3 个数 --> [{}]",range.size());
+	    
+	    
 	    if(range.size()<=0) {
 	    	
 	    	boolean set = cacheList.set("user:list", list);
